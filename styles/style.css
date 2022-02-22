@@ -1,0 +1,52 @@
+
+button {
+  border: black solid 1px;
+  margin: 0;
+  padding: 10px;
+  flex-grow: 1;
+}
+
+#display {
+  border: black solid 0.5px;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family:monospace;
+  font-size: 28px;
+}
+
+#calc-container {
+  border: black solid 3px;
+  width: 200px;
+
+}
+
+
+#pad-container {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+}
+
+
+#number-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border: black solid 2px;
+}
+
+.num-row {
+  display: flex;
+}
+
+#operator-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border: black solid 2px;
+  border-left: 0px;
+  border-right: 0px;
+}
