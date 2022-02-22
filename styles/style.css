@@ -1,25 +1,31 @@
 
 button {
-  border: black solid 1px;
   margin: 0;
   padding: 10px;
   flex-grow: 1;
 }
 
 #display {
-  border: black solid 0.5px;
   width: 200px;
   height: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
+  border: black solid 1px;
+  border-radius: 5px;
+}
+
+#display p {
+  margin-right: 10px;
+  margin-right: 10px;
   font-family:monospace;
   font-size: 28px;
 }
 
 #calc-container {
-  border: black solid 3px;
   width: 200px;
+  border: black solid 2px;
+  border-radius: 5px;
 
 }
 
@@ -35,7 +41,6 @@ button {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  border: black solid 2px;
 }
 
 .num-row {
@@ -46,7 +51,4 @@ button {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  border: black solid 2px;
-  border-left: 0px;
-  border-right: 0px;
 }

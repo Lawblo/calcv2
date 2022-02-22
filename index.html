@@ -10,7 +10,9 @@
 </head>
 <body>
   <div id="calc-container">
-    <div id="display">1234567890</div>
+    <div id="display">
+      <p id="display-content">0</p>
+    </div>
     <div id="pad-container">
       <div id="number-container">
         <div id="top-row" class="num-row">
@@ -30,8 +32,8 @@
         </div>
         <div id="zero-row" class="num-row">
           <button id="btn-0" class="num-btn">0</button>
-          <button id="eql-btn" class="num-btn">=</button>
-          <button id="clear" class="num-btn">C</button>
+          <button id="eql-btn" class="operator-btn">=</button>
+          <button id="clear-btn" class="operator-btn">C</button>
         </div>
       </div>
       <div id="operator-container">
@@ -39,7 +41,6 @@
         <button id="subtract-btn" class="operator-btn">-</button>
         <button id="mult-btn" class="operator-btn">*</button>
         <button id="divide-btn" class="operator-btn">/</button>
-
       </div>
     </div>
   </div>
