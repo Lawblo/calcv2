@@ -1,3 +1,4 @@
+let current_value;
 let store_value;
 let store_operator;
 
@@ -27,8 +28,8 @@ const num_buttons = document.querySelectorAll('.num-btn');
 const op_buttons = document.querySelectorAll('.operator-btn');
 const clear_btn = document.querySelector('#clear-btn');
 
-function update_display (change_to) {
-  display.textContent = change_to;
+function update_display () {
+  display.textContent = current_value;
 }
 
 function get_display() {
@@ -36,13 +37,16 @@ function get_display() {
 }
 
 function num_press(num) {
-  if (get_display() === '0' || store_operator !== '') {
-    update_display(num);
-    store_operator = '';
-  } else if (get_display().length > 10) {
+  // if (get_display() === '0' || current_value === null) {
+  if (current_value === null || get_display() == 0) {
+    current_value = num;
+    update_display();
+  // } else if (get_display().length > 10) {
+  } else if (current_value.length > 10) {
     return;
   } else {
-    update_display(get_display() + num)
+    current_value += num;
+    update_display();
   }
 }
 
@@ -53,20 +57,25 @@ function num_events() {
 }
 
 function clear_event() {
-  clear_btn.addEventListener('click', () => update_display('0'));
-  store_operator = '';
-  store_value = '';
+  clear_btn.addEventListener('click', () => {
+    current_value = 0;
+    store_operator = '';
+    store_value = '';
+    update_display()
+  });
+
 }
 
 function op_press(operator) {
   store_operator = operator;
-  store_value = get_display();
-
+  store_value = current_value;
+  current_value = null;
+  console.log(operator)
 }
 
 function op_events() {
   for (i = 0; i < op_buttons.length; i++) {
-    op_buttons[i].addEventListener('click', (e) => op_press(e.target.innerText));
+    op_buttons[i].addEventListener('click', (e) => op_press(e.target));
   }
 }
 
